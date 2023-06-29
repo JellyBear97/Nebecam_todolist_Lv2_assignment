@@ -13,7 +13,7 @@ export const addTodo = payload => {
 };
 export const deleteTodo = payload => {
   return {
-    type: ADD_TODO,
+    type: DELETE_TODO,
     payload: payload,
   };
 };
@@ -21,7 +21,7 @@ export const deleteTodo = payload => {
 // ???
 export const switchTodo = payload => {
   return {
-    type: ADD_TODO,
+    type: SWITCH_TODO,
     payload: payload,
   };
 };
@@ -54,7 +54,7 @@ const todos = (state = initialState, action) => {
     case DELETE_TODO:
       return;
     case SWITCH_TODO:
-      return;
+      return action.payload;
     default:
       return state;
   }

@@ -14,10 +14,11 @@ function TodoList({ $isDone }) {
   const onClick = todoId => {
     const switchedTodos = todos.map(todo => {
       if (todo.id === todoId) {
-        return !todo.isDone;
+        return { ...todo, isDone: !todo.isDone };
       }
       return todo;
     });
+    console.log(switchedTodos);
     dispatch(switchTodo(switchedTodos));
   };
   return (
